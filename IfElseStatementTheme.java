@@ -17,7 +17,7 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Ты уже вырос");
         }
-       char firstLetterName = "Rembo".charAt(0);
+        char firstLetterName = "Rembo".charAt(0);
         if(firstLetterName == 'M') {
             System.out.println("Будешь богатым");
         } else if(firstLetterName == 'I') {
@@ -40,17 +40,18 @@ public class IfElseStatementTheme {
         if (num1 == 0) {
             System.out.print(num1);
         } else {
-        if (num1 < 0) {
-            System.out.println("отрицательное число");
-        } else {
-            System.out.println("положительное число");
-        } if (num1 % 2 == 0) {
-            System.out.println("четное число");
-        } else {
-            System.out.println("нечетно число");
+            if (num1 < 0) {
+                System.out.println("отрицательное число");
+            } else {
+                System.out.println("положительное число");
+            } 
+            if (num1 % 2 == 0) {
+                System.out.println("четное число");
+            } else {
+                System.out.println("нечетно число");
+            }
+            System.out.println(num1);
         }
-        System.out.println(num1);
-    }
 
         System.out.println("\n4. Поиск одинаковых цифр в числах");
         int srcNum1 = 357;
@@ -74,16 +75,10 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5. Определение буквы, числа или символа по их коду");
         char symbol = '\u0057';
-        if (symbol >= 0 && symbol <= 47) {
-            System.out.print("не буква и не число");
-        } else if (symbol >= 48 && symbol <= 57) {
+        if (symbol >= 48 && symbol <= 57) {
             System.out.println("цифра");
-        } else if (symbol >= 58 && symbol <= 64) {
-            System.out.println("не буква и не число");
         } else if (symbol >= 65 && symbol <= 90) {
             System.out.println("большая буква");
-        } else if (symbol >= 91 && symbol <= 96) {
-            System.out.println("не буква и не число");
         } else if (symbol >= 97 && symbol <= 122) {
             System.out.println("маленькая буква");
         } else {
@@ -145,9 +140,9 @@ public class IfElseStatementTheme {
         int costPrice = 9000;
         int annualProfit = (sales - costPrice - rent) * 12;
         if (annualProfit <= 0) {
-            System.out.println(annualProfit);
+            System.out.println("прибыль за год: " + annualProfit);
         } else {
-            System.out.println("+" + annualProfit);
+            System.out.println("прибыль за год: +" + annualProfit);
         }
 
         System.out.println("\n9. Подсчет количества банкнот");
@@ -157,11 +152,12 @@ public class IfElseStatementTheme {
         int units = num % 10;
         int hundredsInBank = 5;
         int dozensInBank = 5;
-        int unitsInBank = 17;
-        int sumBanknot = hundredsInBank * 100 + dozensInBank * 10 + unitsInBank;
-        System.out.println("сотен требуется = " + hundreds);
-        System.out.println("десяток требуется = " + dozens * 10);
-        System.out.println("единиц требуется = " + units);
+        int missingAmountOfBanknotes = dozens - dozensInBank;
+        int unitsRequiredNumberOfBanknotes = 17;
+        int sumBanknot = hundredsInBank * 100 + dozensInBank * 10 + unitsRequiredNumberOfBanknotes;
+        System.out.println("сотен требуется = " + hundredsInBank);
+        System.out.println("десяток требуется = " + dozensInBank * 10);
+        System.out.println("единиц требуется = " + unitsRequiredNumberOfBanknotes);
         System.out.println("исходная сумма = " + sumBanknot);
 
     }
