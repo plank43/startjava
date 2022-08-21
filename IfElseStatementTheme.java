@@ -149,15 +149,21 @@ public class IfElseStatementTheme {
         int num = 567;
         int hundreds = num / 100;
         int dozens = num / 10 % 10;
-        int units = num % 10;
+        int ones = num % 10;
         int hundredsInBank = 5;
         int dozensInBank = 5;
-        int missingAmountOfBanknotes = dozens - dozensInBank;
-        int unitsRequiredNumberOfBanknotes = 17;
-        int sumBanknot = hundredsInBank * 100 + dozensInBank * 10 + unitsRequiredNumberOfBanknotes;
+        int onesInBank = 17;
+        int onesRequiredNumberOfBanknotes = 0;
+        if (dozens <= dozensInBank) {
+            dozens *= 10;
+        } else {
+            onesRequiredNumberOfBanknotes = num - (hundreds * 100 + dozensInBank * 10);
+        }
+        
+        int sumBanknot = hundredsInBank * 100 + dozensInBank * 10 + ones + onesRequiredNumberOfBanknotes;
         System.out.println("сотен требуется = " + hundredsInBank);
-        System.out.println("десяток требуется = " + dozensInBank * 10);
-        System.out.println("единиц требуется = " + unitsRequiredNumberOfBanknotes);
+        System.out.println("десяток требуется = " + dozensInBank);
+        System.out.println("единиц требуется = " + onesRequiredNumberOfBanknotes);
         System.out.println("исходная сумма = " + sumBanknot);
 
     }
